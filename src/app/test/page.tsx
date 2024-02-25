@@ -1,49 +1,48 @@
 "use client";
-import { Parallax, ParallaxLayer, IParallax } from "@react-spring/parallax";
-import { useTransition, animated, useSpring } from "@react-spring/web";
-import { useEffect, useRef, useState } from "react";
+import { Parallax, ParallaxLayer } from "@react-spring/parallax";
+import { animated, useSpring } from "@react-spring/web";
+import React from "react";
+import "./styles.css";
 
-const reactImports1 = `
-import { useEffect } from 'react';
-import { createConnection } from './chat.js';
-`;
+export default function App() {
+  const [{ offsetY }] = useSpring(() => ({ offsetY: 0 }));
 
-const reactImports2 = `
-function ChatRoom({ roomId }) {
-  const [serverUrl, setServerUrl] = useState('https://localhost:1234');
-`;
-
-const reactImports3 = `
-  useEffect(() => {
-    const connection = createConnection(serverUrl, roomId);
-    connection.connect();
-    return () => {
-      connection.disconnect();
-    };
-  }, [serverUrl, roomId]);
-  // ...
-}
-`;
-
-const TestPage = () => {
-  const [isVisible, setIsVisible] = useState(false);
   return (
-    <Parallax pages={5}>
-      <ParallaxLayer sticky={{ start: 3, end: 4 }} className="flex items-center justify-start">
-        <div className="mockup-code m-4 p-3">
-          <pre className="animate-typing overflow-hidden delay-1000">
-            <code>{reactImports1}</code>
-          </pre>
-          <pre className="animate-typing overflow-hidden">
-            <code>{reactImports2}</code>
-          </pre>
-          <pre className="animate-typing overflow-hidden">
-            <code>{reactImports3}</code>
-          </pre>
-        </div>
-      </ParallaxLayer>
-    </Parallax>
+    <div className="scroll ">
+      <div className="background" />
+      <div
+        className="circle"
+        style={{
+          position: "fixed",
+          top: "20%",
+          left: "60%",
+          transform: "scale(0.6)",
+        }}
+      >
+        <animated.div>{offsetY}</animated.div>
+      </div>
+    </div>
   );
-};
+}
 
-export default TestPage;
+{
+  /* <Parallax pages={4} config={{ frequency: 1 }} className="scroll">
+<div className="background" />
+<ParallaxLayer offset={0} factor={1} speed={-1} style={{ top: 0, left: 0 }}>
+  <div className="circle" style={{ position: "absolute", top: "60%", left: "30%" }} />
+</ParallaxLayer>
+<ParallaxLayer offset={2} factor={1.5} speed={-1} style={{ top: 0, left: 0 }}>
+  <div
+    className="circle"
+    style={{
+      position: "fixed",
+      top: "20%",
+      left: "60%",
+      transform: "scale(0.6)",
+    }}
+  >
+    <animated.div>{offsetY}</animated.div>
+  </div>
+</ParallaxLayer>
+</Parallax> */
+}
