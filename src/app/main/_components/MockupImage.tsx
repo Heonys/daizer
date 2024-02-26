@@ -1,6 +1,6 @@
 const MockupImage = () => {
   return (
-    <div className="stack -rotate-x-[20deg] -rotate-z-12 w-48 -translate-x-[350px] translate-y-20">
+    <div className="stack -rotate-x-[20deg] -rotate-z-12 w-[13.5vw] -translate-x-[22vw] translate-y-[11vh]">
       <img
         src="https://daisyui.com/images/stock/photo-1559703248-dcaaec9fab78.jpg"
         className="rounded"

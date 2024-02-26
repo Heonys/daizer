@@ -31,9 +31,6 @@ const ParallaxPage = () => {
 
       if (parallaxLayer2.current?.isSticky === true) setScaled(false);
       else setScaled(true);
-
-      // if (parallaxLayer3.current?.isSticky === true) setScaled(false);
-      // else setScaled(true);
     };
     return () => {
       container.onscroll = null;
@@ -44,12 +41,7 @@ const ParallaxPage = () => {
 
   return (
     <div>
-      <Parallax
-        pages={13}
-        ref={parallax}
-        config={{ frequency: 1 }}
-        className="bg-white text-[#2D3748]"
-      >
+      <Parallax pages={14} ref={parallax} className="bg-white text-[#2D3748] max-h-[920px] my-auto">
         <ParallaxLayer sticky={{ start: 0, end: 4 }} className="flex items-center justify-start">
           <div className="hero min-h-screen ">
             <div className="hero-content flex-col lg:flex-row">
@@ -102,9 +94,9 @@ const ParallaxPage = () => {
           </div>
         </ParallaxLayer>
 
-        <ParallaxLayer sticky={{ start: 1, end: 8 }} className="flex items-center justify-end">
+        <ParallaxLayer sticky={{ start: 1, end: 8 }} className="flex items-center justify-end ">
           <div
-            className={`mockup-browser border bg-base-300 w-[700px] shadow-2xl h-[500px] translate-x-20 transition-all duration-700 ${
+            className={`mockup-browser border bg-base-300 w-[45vw] shadow-2xl h-[70vh] translate-x-[5vw] transition-all duration-700 ${
               rotate ? "-rotate-x-[20deg] -rotate-z-12" : ""
             }`}
           >
@@ -132,7 +124,7 @@ const ParallaxPage = () => {
         </ParallaxLayer>
 
         <ParallaxLayer sticky={{ start: 7, end: 8 }} className="flex items-center justify-end">
-          <div className="mockup-code p-3 w-[600px] h-[420px]">
+          <div className="mockup-code p-3 w-[37vw] h-[58vh] -translate-x-[1vw] overflow-hidden">
             <pre>
               <code>
                 <div>
@@ -192,7 +184,7 @@ const`}</span>
           <div></div>
         </ParallaxLayer>
 
-        <ParallaxLayer sticky={{ start: 9, end: 13 }} className="flex items-center justify-center">
+        <ParallaxLayer sticky={{ start: 9, end: 14 }} className="flex items-center justify-center">
           <div
             className={`hero min-h-screen transition-all duration-1000 ${
               scaled ? "scale-150" : "scale-100"
@@ -218,10 +210,10 @@ const`}</span>
         </ParallaxLayer>
 
         <ParallaxLayer
-          sticky={{ start: 12, end: 13 }}
-          className="flex bg-base-200 items-end justify-center"
+          sticky={{ start: 13, end: 14 }}
+          className="flex bg-white items-end justify-center"
         >
-          <div className="hero min-h-screen bg-base-200 relative">
+          <div className="hero min-h-screen relative">
             <div className="hero-content text-center">
               <div className="max-w-md">
                 <h1 className="text-5xl font-bold">Hello there</h1>
