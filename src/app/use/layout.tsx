@@ -3,5 +3,5 @@ type Props = {
 };
 
 export default function DashboardLayout({ children }: Props) {
-  return <div>{children}</div>;
+  return <section className="">{children}</section>;
 }

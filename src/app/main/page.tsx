@@ -191,7 +191,7 @@ const`}</span>
             }`}
           >
             <div
-              className={`mockup-window border bg-base-300 absolute w-[90%] h-[90%] z-10 transition-all duration-1000 ${
+              className={`mockup-window border bg-base-300 absolute translate-y-[4vh] w-[90%] h-[87%] z-10 transition-all duration-1000 ${
                 scaled ? "opacity-0" : "opacity-100"
               }`}
             >
