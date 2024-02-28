@@ -11,3 +11,14 @@
   margin: 10px 0;
   padding: 10px;
 }
+
+.preview {
+  background-image: repeating-linear-gradient(
+    45deg,
+    #ffffff,
+    #ffffff 13px,
+    #e5e6e6 13px,
+    #e5e6e6 14px
+  );
+  background-size: 40px 40px;
+}

@@ -4,6 +4,7 @@ import "./globals.css";
 import { IoLanguage } from "react-icons/io5";
 import { FaChevronDown } from "react-icons/fa";
 import { FiSun, FiMoon } from "react-icons/fi";
+import Link from "next/link";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -44,20 +45,20 @@ export default function RootLayout({
                   className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
                 >
                   <li>
-                    <a>Homepage</a>
+                    <Link href="/main">Main</Link>
                   </li>
                   <li>
-                    <a>Portfolio</a>
+                    <Link href="/use">Use</Link>
                   </li>
                   <li>
-                    <a>About</a>
+                    <Link href="/test">Test</Link>
                   </li>
                 </ul>
               </div>
             </div>
             <div className="flex-1 items-center">
               <a className="btn btn-ghost text-xl font-extrabold">Xiter</a>
-              <div className="badge badge-md tracking-widest bg-base-200">1.0.1</div>
+              <div className="badge badge-md tracking-widest bg-base-200">0.0.1</div>
             </div>
             <div className="flex items-center space-x-3 p-2">
               <div className="flex items-center">

@@ -1,6 +1,5 @@
 "use client";
-import React, { useState, useEffect } from "react";
-import _ from "lodash";
+import React, { useState } from "react";
 import RGL, { WidthProvider } from "react-grid-layout";
 import "react-grid-layout/css/styles.css";
 import "react-resizable/css/styles.css";
@@ -8,75 +7,93 @@ import "./style.css";
 
 const ReactGridLayout = WidthProvider(RGL);
 
-const GridPropertyLayout = ({
-  items = 10,
-  rowHeight = 25,
+const AddRemoveLayout = ({
+  className = "layout",
+  cols = { lg: 12, md: 10, sm: 6, xs: 4, xxs: 2 },
+  rowHeight = 20,
   onLayoutChange = () => {},
-  cols = 20,
 }) => {
-  const generateLayout = () => {
-    return _.map(new Array(items), function (item, i) {
-      const w = Math.ceil(Math.random() * 4);
-      const y = Math.ceil(Math.random() * 4) + 1;
-      return {
-        x: (i * 2) % 12,
-        y: Math.floor(i / 6) * y,
-        w: w,
-        h: y,
-        i: i.toString(),
-      };
-    });
+  const [items, setItems] = useState<any>(
+    [0, 1, 2, 3, 4].map((i, key, list) => ({
+      i: i.toString(),
+      x: i * 2,
+      y: 0,
+      w: 2,
+      h: 2,
+      add: i === list.length - 1,
+    }))
+  );
+
+  const [newCounter, setNewCounter] = useState(0);
+  const [layoutCols, setLayoutCols] = useState(cols);
+
+  const onAddItem = () => {
+    setItems([
+      ...items,
+      {
+        i: "n" + newCounter,
+        x: (items.length * 2) % (layoutCols || 12),
+        y: Infinity, // puts it at the bottom
+        w: 2,
+        h: 2,
+      },
+    ]);
+    setNewCounter(newCounter + 1);
   };
 
-  const [layout, setLayout] = useState(generateLayout());
-
-  const generateDOM = () => {
-    return _.map(_.range(items), function (i) {
-      return (
-        <div className="border border-blue-300" key={i} data-grid={layout[i]}>
-          <span className="text ">{i}</span>
-        </div>
-      );
-    });
+  const onBreakpointChange = (breakpoint, cols) => {
+    setLayoutCols(cols);
   };
 
-  const onResize = (layout, oldLayoutItem, layoutItem, placeholder) => {
-    if (layoutItem.h < 3 && layoutItem.w > 2) {
-      layoutItem.w = 2;
-      placeholder.w = 2;
-    }
-
-    if (layoutItem.h >= 3 && layoutItem.w < 2) {
-      layoutItem.w = 2;
-      placeholder.w = 2;
-    }
+  const onRemoveItem = (i) => {
+    setItems(items.filter((item) => item.i !== i));
   };
 
-  useEffect(() => {
-    setLayout(generateLayout());
-  }, [items]);
+  const createElement = (el) => {
+    const removeStyle = {
+      position: "absolute",
+      right: "2px",
+      top: 0,
+      cursor: "pointer",
+    };
+    const i = el.add ? "+" : el.i;
+    return (
+      <div key={i} data-grid={el} className="border">
+        {el.add ? (
+          <span
+            className="add text"
+            onClick={onAddItem}
+            title="You can add an item by clicking here, too."
+          >
+            Add +
+          </span>
+        ) : (
+          <span className="text">
+            <button className="btn btn-primary w-full h-full">Primary</button>
+            {/* <span>{i}</span> */}
+          </span>
+        )}
+        <span className="remove text-white" style={removeStyle} onClick={() => onRemoveItem(i)}>
+          x
+        </span>
+      </div>
+    );
+  };
 
   return (
-    <div className="mt-20 bg-red-100">
+    <div className="mt-20">
+      <button onClick={onAddItem}>Add Item</button>
       <ReactGridLayout
-        onLayoutChange={(layout) => {
-          onLayoutChange();
-          setLayout(layout);
-        }}
-        onResize={onResize}
-        isDraggable={true}
-        isResizable={true}
-        compactType="vertical"
-        // measureBeforeMount={false}
+        onLayoutChange={onLayoutChange}
+        onBreakpointChange={onBreakpointChange}
+        className={className}
+        // cols={10}
         rowHeight={rowHeight}
-        cols={cols}
-        allowOverlap
-        resizeHandles={["se"]}
       >
-        {generateDOM()}
+        {items.map((el) => createElement(el))}
       </ReactGridLayout>
     </div>
   );
 };
 
-export default GridPropertyLayout;
+export default AddRemoveLayout;
