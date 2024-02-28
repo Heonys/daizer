@@ -48,16 +48,15 @@ export default function RootLayout({
                     <Link href="/main">Main</Link>
                   </li>
                   <li>
-                    <Link href="/use">Use</Link>
-                  </li>
-                  <li>
-                    <Link href="/test">Test</Link>
+                    <Link href="/use">Canvas</Link>
                   </li>
                 </ul>
               </div>
             </div>
             <div className="flex-1 items-center">
-              <a className="btn btn-ghost text-xl font-extrabold">Xiter</a>
+              <Link href="/main" className="btn btn-ghost text-xl font-extrabold">
+                Xiter
+              </Link>
               <div className="badge badge-md tracking-widest bg-base-200">0.0.1</div>
             </div>
             <div className="flex items-center space-x-3 p-2">
