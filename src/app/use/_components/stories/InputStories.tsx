@@ -3,21 +3,35 @@ import { CreateElementType, Item } from "../Canvas";
 
 type Props = {
   onAddItem: (args: CreateElementType) => any;
+  onRemoveItem: (args: number) => void;
 };
 
-const InputStories = ({ onAddItem }: Props) => {
+const InputStories = ({ onAddItem, onRemoveItem }: Props) => {
   const [inputPaceholder, setInputPaceholder] = useState("Type here");
   const [inputLabel, setInputLabel] = useState("");
   const [inputSize, setInputSize] = useState("input");
 
+  const handleKeyDown = (index: number) => (event: React.KeyboardEvent<HTMLDivElement>) => {
+    if (event.key === "Delete") {
+      onRemoveItem(index);
+    }
+  };
+
   const createElement = (el: Item) => {
     const i = el.i;
     return (
-      <div key={i} data-grid={el} className="border">
+      <div
+        key={i}
+        data-grid={el}
+        className="border focus:border-dashed focus:border-2"
+        onKeyDown={handleKeyDown(i)}
+      >
         {
           <span className="text">
             {inputLabel.length !== 0 ? (
-              <label className={`w-full input input-bordered flex items-center gap-2 ${inputSize}`}>
+              <label
+                className={`w-full input input-bordered  flex items-center gap-2 ${inputSize}`}
+              >
                 {inputLabel}
                 <input type="text" className="grow" placeholder={inputPaceholder} />
               </label>

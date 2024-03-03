@@ -1,6 +1,6 @@
 const MockupLayout = () => {
   return (
-    <div className="navbar bg-base-100 w-[41vw] -rotate-x-[20deg] -rotate-z-12 shadow-xl -translate-y-[22vh]">
+    <div className="navbar bg-base-100 w-[48vw] -rotate-x-[20deg] -rotate-z-12 shadow-xl -translate-y-[22vh]">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost btn-circle">

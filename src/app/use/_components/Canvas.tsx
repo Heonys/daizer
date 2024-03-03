@@ -6,9 +6,10 @@ import "react-resizable/css/styles.css";
 import "./style.css";
 import ButtonStories from "./stories/ButtonStories";
 import InputStories from "../_components/stories/InputStories";
+import { FcInfo } from "react-icons/fc";
 
 export type Item = {
-  i: string;
+  i: number;
   x: number;
   y: number;
   w: number;
@@ -20,30 +21,36 @@ export type CreateElementType = (el: Item) => React.ReactNode;
 const ReactGridLayout = WidthProvider(RGL);
 
 const Canvas = () => {
-  const [newCounter, setNewCounter] = useState(0);
-  const [items, setItems] = useState<React.ReactNode[]>([]);
+  const [newCounter, setNewCounter] = useState(1);
+  const [items, setItems] = useState<[number, React.ReactNode][]>([[0, null]]);
   const [selected, setSelected] = useState("button");
 
   const onAddItem = (func: CreateElementType) => {
     const defaultOption = {
-      i: "n" + newCounter,
+      i: newCounter,
       x: items.length * 5,
       y: Infinity,
       w: 2,
       h: 2,
     };
 
-    setItems([...items, func(defaultOption)]);
+    setItems([...items, [newCounter, func(defaultOption)]]);
     setNewCounter(newCounter + 1);
+  };
+
+  const onRemoveItem = (index: number) => {
+    setItems((prev) => {
+      return prev.filter((v, i) => v[0] !== index);
+    });
   };
 
   const generateStories = () => {
     switch (selected) {
       case "button": {
-        return <ButtonStories onAddItem={onAddItem} />;
+        return <ButtonStories onAddItem={onAddItem} onRemoveItem={onRemoveItem} />;
       }
       case "input": {
-        return <InputStories onAddItem={onAddItem} />;
+        return <InputStories onAddItem={onAddItem} onRemoveItem={onRemoveItem} />;
       }
     }
   };
@@ -60,6 +67,7 @@ const Canvas = () => {
             <button className="btn btn-disabled join-item shadow-md">Canvas3</button>
           </div>
         </div>
+
         <ReactGridLayout
           className=" bg-gray-50 w-[80vw] min-h-[95vh] preview overflow-hidden"
           compactType="vertical"
@@ -72,10 +80,16 @@ const Canvas = () => {
           resizeHandles={["se"]}
           transformScale={0.91}
         >
-          {items}
+          {items.map((v) => v[1])}
         </ReactGridLayout>
 
-        <div className="w-[30vw] border border-zinc-300 flex items-center justify-around flex-col space-y-4 p-3">
+        <div className="w-[30vw] border border-zinc-300 flex items-center justify-around flex-col space-y-2 p-3">
+          <div className="flex space-x-1 items-center self-start">
+            <FcInfo size={20} />
+            <div>
+              If you want to delete, press the <kbd className="kbd">del</kbd> key
+            </div>
+          </div>
           <div className="w-full max-w-xs">
             <select
               className="select select-bordered  w-full max-w-xs "

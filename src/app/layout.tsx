@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Noto_Sans_KR } from "next/font/google";
 import "./globals.css";
 import { IoLanguage } from "react-icons/io5";
 import { FaChevronDown } from "react-icons/fa";
@@ -7,6 +7,11 @@ import { FiSun, FiMoon } from "react-icons/fi";
 import Link from "next/link";
 
 const inter = Inter({ subsets: ["latin"] });
+
+const notoSansKr = Noto_Sans_KR({
+  subsets: ["latin"],
+  weight: ["100", "400", "700", "900"],
+});
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -20,7 +25,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body suppressHydrationWarning={true} className={inter.className}>
+      <body suppressHydrationWarning={true} className={notoSansKr.className}>
         <section className="text-[0.95em] desktoplg:text-[1.1em] desktopxl:text-[1.5em]">
           <div className="navbar  absolute left-0 top-0 z-[9999] bg-opacity-10 backdrop-blur-md backdrop-saturate-150 max-w-[99%] border-b-2 border-slate-900/10">
             <div className="flex-none">

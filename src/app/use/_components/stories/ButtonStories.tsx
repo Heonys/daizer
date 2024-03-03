@@ -3,20 +3,30 @@ import { CreateElementType, Item } from "../Canvas";
 
 type Props = {
   onAddItem: (args: CreateElementType) => any;
+  onRemoveItem: (args: number) => void;
 };
 
-const ButtonStories = ({ onAddItem }: Props) => {
+const ButtonStories = ({ onAddItem, onRemoveItem }: Props) => {
   const [buttonColor, setButtonColor] = useState("btn-outline");
   const [buttonSize, setButtonSize] = useState("btn");
   const [buttonText, setButtonText] = useState("Button");
 
+  const handleKeyDown = (index: number) => (event: React.KeyboardEvent<HTMLButtonElement>) => {
+    if (event.key === "Delete") {
+      onRemoveItem(index);
+    }
+  };
+
   const createElement = (el: Item) => {
     const i = el.i;
     return (
-      <div key={i} data-grid={el} className="border">
+      <div key={i} data-grid={el} className="border relative">
         {
           <span className="text">
-            <button className={`btn w-full h-full ${buttonColor} ${buttonSize}`}>
+            <button
+              className={`btn w-full h-full ${buttonColor} ${buttonSize} focus:border-dashed focus:border-2`}
+              onKeyDown={handleKeyDown(i)}
+            >
               {buttonText}
             </button>
           </span>
@@ -72,7 +82,7 @@ const ButtonStories = ({ onAddItem }: Props) => {
           />
         </div>
         <div className="self-start">
-          <button className="btn btn-neutral" onClick={() => onAddItem(createElement)}>
+          <button className="btn btn-neutral w-20" onClick={() => onAddItem(createElement)}>
             Add
           </button>
         </div>

@@ -7,6 +7,8 @@ import MockupButton from "./_components/MockupButton";
 import MockupImage from "./_components/MockupImage";
 import Favorite from "./_components/Favorite";
 import { IoMdArrowRoundDown } from "react-icons/io";
+import Daisy from "@/../public/daisy.jpg";
+import Image from "next/image";
 
 const ParallaxPage = () => {
   const [rotate, setRotate] = useState(true);
@@ -43,19 +45,22 @@ const ParallaxPage = () => {
     <div>
       <Parallax pages={14} ref={parallax} className="bg-white text-[#2D3748] max-h-[920px] my-auto">
         <ParallaxLayer sticky={{ start: 0, end: 4 }} className="flex items-center justify-start">
-          <div className="hero min-h-screen ">
-            <div className="hero-content flex-col lg:flex-row">
-              <img
-                src="https://daisyui.com/images/stock/photo-1635805737707-575885ab0820.jpg"
-                className="max-w-sm rounded-lg shadow-2xl"
+          <div className="hero min-h-screen flex justify-start items-center ml-10">
+            <div className="hero-content flex lg:flex-row relative w-full justify-start">
+              <Image
+                src={Daisy}
+                alt="daisy"
+                className="max-w-sm rounded-lg shadow-2xl z-40 -rotate-z-[35deg] -translate-x-[8rem] "
               />
-              <div>
-                <h1 className="text-5xl font-bold">Box Office News!</h1>
-                <p className="py-6">
-                  Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi
-                  exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.
-                </p>
-                <button className="btn btn-primary">Get Started</button>
+              <div className="p-2 absolute left-[20%] top-1/2 w-full z-50">
+                <h1 className="text-5xl leading-normal font-bold">Layout Editor </h1>
+                <h1 className="text-5xl leading-normal font-bold">
+                  {`for `}
+                  <span className="bg-gradient-to-r from-blue-600 to-indigo-400 bg-clip-text text-transparent">
+                    DaisyUI
+                  </span>
+                </h1>
+                <h1 className="text-5xl leading-normal font-bold">Make prototyping easier</h1>
               </div>
             </div>
           </div>
@@ -79,16 +84,20 @@ const ParallaxPage = () => {
           className="flex items-center justify-end z-0"
         >
           <div className="hero min-h-screen z-0">
-            <div className="hero-content flex-col lg:flex-row-reverse">
-              <div>
-                <div className="w-full p-10">
-                  <h1 className="text-4xl font-bold ">Provident cupiditate voluptatem et in</h1>
+            <div className="hero-content flex flex-col lg:flex-row-reverse w-full">
+              <div className="self-start w-full">
+                <div className="w-full">
+                  <h1 className="text-5xl text-[#394e6b] font-bold leading-normal">
+                    Easily with Grid-based
+                  </h1>
+                  <h1 className="text-5xl text-[#80d0d0] font-mono leading-normal">
+                    without writing code
+                  </h1>
                 </div>
-                <p className="py-6">
+                {/* <p className="py-6">
                   Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi
                   exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.
-                </p>
-                <button className="btn btn-primary">Get Started</button>
+                </p> */}
               </div>
             </div>
           </div>
@@ -96,7 +105,7 @@ const ParallaxPage = () => {
 
         <ParallaxLayer sticky={{ start: 1, end: 8 }} className="flex items-center justify-end ">
           <div
-            className={`mockup-browser border bg-base-300 w-[45vw] shadow-2xl h-[70vh] translate-x-[5vw] transition-all duration-700 ${
+            className={`mockup-browser border bg-base-300 w-[52vw] shadow-2xl h-[75vh] translate-x-[5vw] transition-all duration-700 ${
               rotate ? "-rotate-x-[20deg] -rotate-z-12" : ""
             }`}
           >
@@ -124,7 +133,7 @@ const ParallaxPage = () => {
         </ParallaxLayer>
 
         <ParallaxLayer sticky={{ start: 7, end: 8 }} className="flex items-center justify-end">
-          <div className="mockup-code p-3 w-[37vw] h-[58vh] -translate-x-[1vw] overflow-hidden">
+          <div className="mockup-code p-3 w-[44vw] h-[60vh] -translate-x-[1vw] overflow-hidden">
             <pre>
               <code>
                 <div>
