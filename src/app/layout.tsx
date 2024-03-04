@@ -60,7 +60,7 @@ export default function RootLayout({
             </div>
             <div className="flex-1 items-center">
               <Link href="/main" className="btn btn-ghost text-xl font-extrabold">
-                Xiter
+                Daizer
               </Link>
               <div className="badge badge-md tracking-widest bg-base-200">0.0.1</div>
             </div>

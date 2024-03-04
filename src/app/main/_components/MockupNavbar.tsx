@@ -1,6 +1,6 @@
 const MockupLayout = () => {
   return (
-    <div className="navbar bg-base-100 w-[48vw] -rotate-x-[20deg] -rotate-z-12 shadow-xl -translate-y-[22vh]">
+    <div className="navbar bg-base-100 w-[48vw] -rotate-x-[20deg] -rotate-z-12 shadow-xl rounded-xl -translate-y-[21vh]">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost btn-circle">
@@ -33,11 +33,10 @@ const MockupLayout = () => {
               <a>About</a>
             </li>
           </ul>
+          <a className="btn btn-ghost text-[1.2em]">Chats</a>
         </div>
       </div>
-      <div className="navbar-center">
-        <a className="btn btn-ghost text-[1.2em]">Xiter</a>
-      </div>
+
       <div className="navbar-end">
         <button className="btn btn-ghost btn-circle">
           <svg

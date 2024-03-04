@@ -1,6 +1,4 @@
-import React from "react";
 import ContentsCard from "./ContentsCard";
-
 import IU from "@/../public/IU.jpg";
 import Fastforward from "@/../public/fastforward.jpg";
 import Unnatural from "@/../public/unnatural.jpg";
