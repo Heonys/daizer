@@ -6,11 +6,12 @@ import MockupFriendsList from "./_components/MockupFriendsList";
 import MockupChatBoard from "./_components/MockupChatBoard";
 import Favorite from "./_components/Favorite";
 import { IoMdArrowRoundDown } from "react-icons/io";
+import { FaArrowRightLong, FaRegCirclePlay } from "react-icons/fa6";
 import Daisy from "@/../public/daisy.jpg";
 import Image from "next/image";
 import woman1 from "@/../public/woman1.jpg";
 import MockupChat from "./_components/MockupChat";
-import { FaRegCirclePlay } from "react-icons/fa6";
+import { FaGithub } from "react-icons/fa";
 import { useRouter } from "next/navigation";
 
 const ParallaxPage = () => {
@@ -43,12 +44,8 @@ const ParallaxPage = () => {
 
   useEffect(scrollListener, []);
 
-  // const handleClick = () => {
-  //   parallax?.current.scrollTo(10.6);
-  // };
-
   return (
-    <Parallax pages={15} ref={parallax} className="bg-white text-[#2D3748] max-h-[920px] my-auto">
+    <Parallax pages={16} ref={parallax} className="bg-white text-[#2D3748] max-h-[920px] my-auto">
       <ParallaxLayer sticky={{ start: 0, end: 5 }} className="flex items-center justify-start">
         <div className="hero min-h-screen flex justify-start items-center ml-10">
           <div className="hero-content flex lg:flex-row relative w-full justify-start">
@@ -58,10 +55,13 @@ const ParallaxPage = () => {
               className="max-w-sm rounded-lg shadow-2xl z-40 -rotate-z-[35deg] -translate-x-[8rem] "
             />
             <div className="p-2 absolute left-[20%] top-1/2 w-full z-50">
-              <h1 className="text-5xl leading-normal font-bold">Layout Editor </h1>
-              <h1 className="text-5xl leading-normal font-bold">
+              <h1 className="text-5xl leading-normal  font-bold">Layout Editor </h1>
+              <h1 className="text-5xl leading-normal font-bold relative">
                 {`for `}
-                <span className="bg-gradient-to-r from-blue-600 to-indigo-400 bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-blue-600 to-indigo-400 bg-clip-text text-transparent blur-xl absolute">
+                  DaisyUI
+                </span>
+                <span className="bg-gradient-to-r from-blue-600 to-indigo-400 bg-clip-text text-transparent ">
                   DaisyUI
                 </span>
               </h1>
@@ -73,7 +73,7 @@ const ParallaxPage = () => {
 
       <ParallaxLayer
         sticky={{ start: 0, end: 10.5 }}
-        className={`flex items-end justify-center p-10 transition-all duration-500 ${
+        className={`flex items-end justify-center p-5 -z-40 transition-all duration-500 ${
           ScrollDownSticky ? "" : "hidden"
         }`}
         ref={scrollDownRef}
@@ -126,7 +126,6 @@ const ParallaxPage = () => {
         <MockupChatBoard />
       </ParallaxLayer>
 
-      {/*  */}
       <ParallaxLayer
         sticky={{ start: 4, end: 4.5 }}
         className="flex items-center justify-end z-50 absolute"
@@ -164,9 +163,7 @@ const ParallaxPage = () => {
         />
       </ParallaxLayer>
 
-      {/*  */}
-
-      <ParallaxLayer sticky={{ start: 8, end: 9 }} className="flex items-center justify-end">
+      <ParallaxLayer sticky={{ start: 8, end: 9 }} className="flex items-center justify-end z-50">
         <div className="mockup-code p-3 w-[44vw] h-[60vh] -translate-x-[1vw] overflow-hidden">
           <pre>
             <code>
@@ -242,15 +239,15 @@ const`}</span>
         </div>
       </ParallaxLayer>
 
-      <ParallaxLayer ref={parallaxLayer1} sticky={{ start: 6.2, end: 10 }}>
+      <ParallaxLayer ref={parallaxLayer1} sticky={{ start: 6.2, end: 11 }}>
         <div></div>
       </ParallaxLayer>
 
-      <ParallaxLayer ref={parallaxLayer2} sticky={{ start: 10.5, end: 15 }}>
+      <ParallaxLayer ref={parallaxLayer2} sticky={{ start: 11, end: 15 }}>
         <div></div>
       </ParallaxLayer>
 
-      <ParallaxLayer sticky={{ start: 10, end: 15 }} className="flex items-center justify-center">
+      <ParallaxLayer sticky={{ start: 10, end: 16 }} className="flex items-center justify-center">
         <div
           className={`hero min-h-screen transition-all duration-1000  ${
             scaled ? "scale-150" : "scale-100"
@@ -268,9 +265,9 @@ const`}</span>
             <h1 className="text-4xl  text-[#394e6b] font-bold">{`Let's create`}</h1>
             <h1 className="text-4xl  text-[#394e6b] font-bold">music streaming service</h1>
             <p className="py-6">
-              <span>{`Let's create layouts for`}</span>
+              <span>{`layout for`}</span>
               <span className="font-bold">{` DaisyUI `}</span>
-              <span>components through</span>
+              <span>components with</span>
               <span className="font-bold">{` Daizer`}</span>
             </p>
             <button className="btn bg-red-500 text-white">
@@ -282,20 +279,33 @@ const`}</span>
       </ParallaxLayer>
 
       <ParallaxLayer
-        sticky={{ start: 13.2, end: 15 }}
+        sticky={{ start: 14.5, end: 16 }}
         className="flex bg-white items-end justify-center"
       >
         <div className="hero min-h-screen relative">
           <div className="hero-content text-center">
-            <div className="max-w-md">
-              <h1 className="text-5xl font-bold">Hello there</h1>
-              <p className="py-6">
-                Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi
-                exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.
+            <div className="max-w-2xl mx-auto">
+              <h1 className="text-5xl leading-normal font-bold w-full  ">{`Finally, Let's really`}</h1>
+              <h1 className="text-5xl font-bold w-full">{`get started now`}</h1>
+
+              <p className="py-6 max-w-md m-auto">
+                daisyUI adds component class names to Tailwind CSS so you can make beautiful
+                websites faster than ever.
               </p>
-              <button className="btn btn-primary" onClick={() => router.push("/use")}>
-                Get Started
-              </button>
+              <div className="flex space-x-4 items-center justify-center">
+                <button className="group btn btn-neutral" onClick={() => router.push("/use")}>
+                  Get Started
+                  <FaArrowRightLong className="duration-100 group-hover:translate-x-1" />
+                </button>
+                <button className="btn group">
+                  <FaGithub
+                    color="black"
+                    size={20}
+                    className="duration-100 group-hover:scale-110"
+                  />
+                  GitHub
+                </button>
+              </div>
             </div>
           </div>
           <aside className="absolute left-1/2 translate-x-[-50%] bottom-5">

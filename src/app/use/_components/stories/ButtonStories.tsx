@@ -40,8 +40,11 @@ const ButtonStories = ({ onAddItem, onRemoveItem }: Props) => {
       <div className="flex-1 w-[90%] preview rounded-2xl flex justify-center items-center">
         <button className={`btn ${buttonColor} ${buttonSize}`}>{buttonText}</button>
       </div>
-      <div className="flex-1 flex flex-col w-full space-y-4 ml-5">
+      <div className="flex-1 flex flex-col w-full space-y-1 ml-5">
         <div>
+          <div className="label">
+            <span className="label-text font-bold">Background Color</span>
+          </div>
           <select
             className="select select-bordered w-full max-w-xs"
             value={buttonColor}
@@ -60,6 +63,9 @@ const ButtonStories = ({ onAddItem, onRemoveItem }: Props) => {
           </select>
         </div>
         <div>
+          <div className="label">
+            <span className="label-text font-bold">Size</span>
+          </div>
           <select
             className="select select-bordered w-full max-w-xs"
             value={buttonSize}
@@ -73,6 +79,9 @@ const ButtonStories = ({ onAddItem, onRemoveItem }: Props) => {
           </select>
         </div>
         <div>
+          <div className="label">
+            <span className="label-text font-bold">Text</span>
+          </div>
           <input
             type="text"
             placeholder="Text"
@@ -81,8 +90,8 @@ const ButtonStories = ({ onAddItem, onRemoveItem }: Props) => {
             className="input input-bordered w-full max-w-xs"
           />
         </div>
-        <div className="self-start">
-          <button className="btn btn-neutral w-20" onClick={() => onAddItem(createElement)}>
+        <div className="self-start p-2">
+          <button className="btn btn-neutral w-20 " onClick={() => onAddItem(createElement)}>
             Add
           </button>
         </div>

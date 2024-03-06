@@ -66,8 +66,11 @@ const InputStories = ({ onAddItem, onRemoveItem }: Props) => {
           />
         )}
       </div>
-      <div className="flex-1 flex flex-col w-full space-y-4 ml-5">
+      <div className="flex-1 flex flex-col w-full space-y-1 ml-5">
         <div>
+          <div className="label">
+            <span className="label-text font-bold">Background Color</span>
+          </div>
           <select
             className="select select-bordered w-full max-w-xs"
             value={inputSize}
@@ -81,6 +84,9 @@ const InputStories = ({ onAddItem, onRemoveItem }: Props) => {
           </select>
         </div>
         <div>
+          <div className="label">
+            <span className="label-text font-bold">Label</span>
+          </div>
           <input
             type="text"
             placeholder="Label"
@@ -90,6 +96,9 @@ const InputStories = ({ onAddItem, onRemoveItem }: Props) => {
           />
         </div>
         <div>
+          <div className="label">
+            <span className="label-text font-bold">Placeholder</span>
+          </div>
           <input
             type="text"
             placeholder="Placeholder"
@@ -98,7 +107,7 @@ const InputStories = ({ onAddItem, onRemoveItem }: Props) => {
             className="input input-bordered w-full max-w-xs"
           />
         </div>
-        <div className="self-start">
+        <div className="self-start p-2">
           <button className="btn btn-neutral" onClick={() => onAddItem(createElement)}>
             Add
           </button>
