@@ -3,7 +3,7 @@ import { Noto_Sans_KR } from "next/font/google";
 import "./globals.css";
 import { IoLanguage } from "react-icons/io5";
 import { FaChevronDown } from "react-icons/fa";
-import Logo from "@/assets/logo.png";
+import Logo from "/public/images/logo.png";
 import Link from "next/link";
 import NavbarDropdown from "@/components/NavbarDropdown";
 import Image from "next/image";

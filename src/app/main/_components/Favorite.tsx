@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { useState } from "react";
-import BiBi from "@/assets/bibi.jpg";
+import BiBi from "/public/images/bibi.jpg";
 import { PiCaretDoubleLeftFill, PiCaretDoubleRightFill, PiPauseFill } from "react-icons/pi";
 import { AiFillSound, AiOutlineHome } from "react-icons/ai";
 import { IoSearch, IoShuffle, IoSettingsOutline } from "react-icons/io5";
@@ -8,7 +8,7 @@ import { FaRegBell } from "react-icons/fa";
 import PlayList from "./PlayList";
 import ContentsGrid from "./ContentsGrid";
 import PlayListGrid from "./PlayListGrid";
-import IU from "@/assets/IU.jpg";
+import IU from "/public/images/IU.jpg";
 
 const Favorite = () => {
   const [volume, setVolume] = useState(40);

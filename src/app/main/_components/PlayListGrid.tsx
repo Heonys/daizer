@@ -1,12 +1,12 @@
 import React from "react";
 import PlayList from "./PlayList";
-import BiBi from "@/assets/bibi.jpg";
-import BIGNaughty from "@/assets/BIGNaughty.jpg";
-import Deepsea from "@/assets/deepsea.jpg";
-import Misfits from "@/assets/misfits.jpg";
-import Run from "@/assets/run.jpg";
-import Toil from "@/assets/toil.jpg";
-import Younha from "@/assets/younha.jpg";
+import BiBi from "/public/images/bibi.jpg";
+import BIGNaughty from "/public/images/BIGNaughty.jpg";
+import Deepsea from "/public/images/deepsea.jpg";
+import Misfits from "/public/images/misfits.jpg";
+import Run from "/public/images/run.jpg";
+import Toil from "/public/images/toil.jpg";
+import Younha from "/public/images/younha.jpg";
 
 const PlayListGrid = () => {
   return (

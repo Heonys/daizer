@@ -1,13 +1,13 @@
 import ContentsCard from "./ContentsCard";
-import IU from "@/assets/IU.jpg";
-import Fastforward from "@/assets/fastforward.jpg";
-import Unnatural from "@/assets/unnatural.jpg";
-import Newjeans from "@/assets/newjeans.jpg";
-import Lovelee from "@/assets/lovelee.jpg";
-import Galaxy from "@/assets/Galaxy.jpg";
-import Laboum from "@/assets/laboum.jpg";
-import MoonNight from "@/assets/moonnight.jpg";
-import Twice from "@/assets/twice.jpg";
+import IU from "/public/images/IU.jpg";
+import Fastforward from "/public/images/fastforward.jpg";
+import Unnatural from "/public/images/unnatural.jpg";
+import Newjeans from "/public/images/newjeans.jpg";
+import Lovelee from "/public/images/lovelee.jpg";
+import Galaxy from "/public/images/Galaxy.jpg";
+import Laboum from "/public/images/laboum.jpg";
+import MoonNight from "/public/images/moonnight.jpg";
+import Twice from "/public/images/twice.jpg";
 
 const ContentsGrid = () => {
   return (
