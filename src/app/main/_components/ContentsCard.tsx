@@ -3,7 +3,7 @@ import React from "react";
 import { TiHeartFullOutline, TiHeartOutline } from "react-icons/ti";
 
 type Props = {
-  image: StaticImageData;
+  image: string;
   like?: boolean;
   title: string;
   author: string;

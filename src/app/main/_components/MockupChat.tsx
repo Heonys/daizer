@@ -3,7 +3,7 @@ import Image from "next/image";
 import React from "react";
 
 type Props = {
-  image: StaticImport;
+  image: string;
   name: string;
   message: string;
   style?: string;

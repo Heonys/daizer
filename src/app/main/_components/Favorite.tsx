@@ -1,6 +1,5 @@
 import Image from "next/image";
 import { useState } from "react";
-import BiBi from "/public/images/bibi.jpg";
 import { PiCaretDoubleLeftFill, PiCaretDoubleRightFill, PiPauseFill } from "react-icons/pi";
 import { AiFillSound, AiOutlineHome } from "react-icons/ai";
 import { IoSearch, IoShuffle, IoSettingsOutline } from "react-icons/io5";
@@ -8,7 +7,6 @@ import { FaRegBell } from "react-icons/fa";
 import PlayList from "./PlayList";
 import ContentsGrid from "./ContentsGrid";
 import PlayListGrid from "./PlayListGrid";
-import IU from "/public/images/IU.jpg";
 
 const Favorite = () => {
   const [volume, setVolume] = useState(40);
@@ -73,8 +71,8 @@ const Favorite = () => {
           <div className="font-bold">Recommend</div>
           {/* <IoShuffle size={22} /> */}
         </div>
-        <PlayList image={IU} title="Celebrity" author="아이유(IU)" time="3:39" />
-        <PlayList image={IU} title="Celebrity" author="아이유(IU)" time="3:39" />
+        <PlayList image="/images/IU.jpg" title="Celebrity" author="아이유(IU)" time="3:39" />
+        <PlayList image="/images/IU.jpg" title="Celebrity" author="아이유(IU)" time="3:39" />
       </div>
       <div className="bg-[#fefbfc] rounded-box col-span-5 flex justify-center space-x-4 flex-row items-center">
         <div className="flex space-x-4">
@@ -85,7 +83,7 @@ const Favorite = () => {
           </div>
           <div className="flex space-x-3 items-center">
             <Image
-              src={BiBi}
+              src="/images/bibi.jpg"
               alt="play"
               width={60}
               height={60}

@@ -1,7 +1,4 @@
 import { IoSearchSharp } from "react-icons/io5";
-import man1 from "/public/images/man1.jpg";
-import man2 from "/public/images/man2.jpg";
-import woman1 from "/public/images/woman1.jpg";
 import Image from "next/image";
 
 const MockupFriendsList = () => {
@@ -29,7 +26,7 @@ const MockupFriendsList = () => {
             <a className=" flex items-center">
               <div className="avatar">
                 <div className="w-6 rounded">
-                  <Image src={man2} alt="man2" />
+                  <Image src="/images/man2.jpg" alt="man2" />
                 </div>
               </div>
               <div>David</div>
@@ -40,7 +37,7 @@ const MockupFriendsList = () => {
             <a className="active flex items-center">
               <div className="avatar">
                 <div className="w-6 rounded">
-                  <Image src={woman1} alt="woman1" />
+                  <Image src="/images/woman1.jpg" alt="woman1" />
                 </div>
               </div>
               <div>Olivia</div>
@@ -50,7 +47,7 @@ const MockupFriendsList = () => {
             <a className=" flex items-center">
               <div className="avatar">
                 <div className="w-6 rounded">
-                  <Image src={man1} alt="man1" />
+                  <Image src="/images/man1.jpg" alt="man1" />
                 </div>
               </div>
               <div>William</div>
