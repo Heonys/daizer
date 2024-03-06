@@ -3,7 +3,6 @@ import { Noto_Sans_KR } from "next/font/google";
 import "./globals.css";
 import { IoLanguage } from "react-icons/io5";
 import { FaChevronDown } from "react-icons/fa";
-import Logo from "/public/images/logo.png";
 import Link from "next/link";
 import NavbarDropdown from "@/components/NavbarDropdown";
 import Image from "next/image";
@@ -33,7 +32,7 @@ export default function RootLayout({
             </div>
             <div className="flex-1 items-center">
               <Link href="/main" className="btn btn-ghost text-xl font-extrabold text-[#394e6b]">
-                <Image src={Logo} alt="logo" width={30} />
+                <Image src="/images/logo.png" alt="logo" width={30} height={30} />
                 Daizer
               </Link>
               <div className="badge badge-md tracking-widest bg-base-200">0.0.1</div>

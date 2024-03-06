@@ -7,9 +7,7 @@ import MockupChatBoard from "./_components/MockupChatBoard";
 import Favorite from "./_components/Favorite";
 import { IoMdArrowRoundDown } from "react-icons/io";
 import { FaArrowRightLong, FaRegCirclePlay } from "react-icons/fa6";
-import Daisy from "/public/images/daisy.jpg";
 import Image from "next/image";
-import woman1 from "/public/images/woman1.jpg";
 import MockupChat from "./_components/MockupChat";
 import { FaGithub } from "react-icons/fa";
 import { useRouter } from "next/navigation";
@@ -50,7 +48,7 @@ const ParallaxPage = () => {
         <div className="hero min-h-screen flex justify-start items-center ml-10">
           <div className="hero-content flex lg:flex-row relative w-full justify-start">
             <Image
-              src={Daisy}
+              src="/images/daisy.jpg"
               alt="daisy"
               className="max-w-sm rounded-lg shadow-2xl z-40 -rotate-z-[35deg] -translate-x-[8rem] "
             />
@@ -131,7 +129,7 @@ const ParallaxPage = () => {
         className="flex items-center justify-end z-50 absolute"
       >
         <MockupChat
-          image={woman1}
+          image="/images/woman1.jpg"
           name="Olivia"
           message="Hi! The website design looks really nice."
           style="-translate-y-[16vh]"
@@ -156,7 +154,7 @@ const ParallaxPage = () => {
         className="flex items-center justify-end z-50 absolute"
       >
         <MockupChat
-          image={woman1}
+          image="/images/woman1.jpg"
           name="Olivia"
           message="Wow, thanks! I'll try it right away."
           style="translate-y-[7vh]"
