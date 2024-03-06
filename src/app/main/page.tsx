@@ -48,7 +48,7 @@ const ParallaxPage = () => {
         <div className="hero min-h-screen flex justify-start items-center ml-10">
           <div className="hero-content flex lg:flex-row relative w-full justify-start">
             <Image
-              src="/images/daisy.jpg"
+              src="/images/Daisy.jpg"
               alt="daisy"
               className="max-w-sm rounded-lg shadow-2xl z-40 -rotate-z-[35deg] -translate-x-[8rem] "
             />
