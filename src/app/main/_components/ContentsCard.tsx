@@ -1,6 +1,5 @@
 import Image, { StaticImageData } from "next/image";
 import React from "react";
-import IU from "@/../public/IU.jpg";
 import { TiHeartFullOutline, TiHeartOutline } from "react-icons/ti";
 
 type Props = {

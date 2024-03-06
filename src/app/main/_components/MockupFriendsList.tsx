@@ -1,7 +1,7 @@
 import { IoSearchSharp } from "react-icons/io5";
-import man1 from "@/../public/man1.jpg";
-import man2 from "@/../public/man2.jpg";
-import woman1 from "@/../public/woman1.jpg";
+import man1 from "@/assets/man1.jpg";
+import man2 from "@/assets/man2.jpg";
+import woman1 from "@/assets/woman1.jpg";
 import Image from "next/image";
 
 const MockupFriendsList = () => {

@@ -7,9 +7,9 @@ import MockupChatBoard from "./_components/MockupChatBoard";
 import Favorite from "./_components/Favorite";
 import { IoMdArrowRoundDown } from "react-icons/io";
 import { FaArrowRightLong, FaRegCirclePlay } from "react-icons/fa6";
-import Daisy from "@/../public/daisy.jpg";
+import Daisy from "@/assets/daisy.jpg";
 import Image from "next/image";
-import woman1 from "@/../public/woman1.jpg";
+import woman1 from "@/assets/woman1.jpg";
 import MockupChat from "./_components/MockupChat";
 import { FaGithub } from "react-icons/fa";
 import { useRouter } from "next/navigation";
@@ -297,14 +297,14 @@ const`}</span>
                   Get Started
                   <FaArrowRightLong className="duration-100 group-hover:translate-x-1" />
                 </button>
-                <button className="btn group">
+                <a className="btn group" href="https://github.com/Heonys/daizer">
                   <FaGithub
                     color="black"
                     size={20}
                     className="duration-100 group-hover:scale-110"
                   />
                   GitHub
-                </button>
+                </a>
               </div>
             </div>
           </div>
