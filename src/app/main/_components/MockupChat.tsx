@@ -13,11 +13,11 @@ const MockupChat = ({ image, message, style, name }: Props) => {
     <div className={`-translate-x-[21vw] -rotate-x-[20deg] -rotate-z-12  z-50 ${style}`}>
       <div className="chat chat-start">
         <div className="chat-image avatar">
-          <div className="w-14 rounded-full">
+          <div className="w-[4vw] rounded-full">
             <Image src={image} alt="woman1" />
           </div>
         </div>
-        <div className="chat-bubble w-[23vw]">{message}</div>
+        <div className="chat-bubble w-[23vw] text-[1vw]">{message}</div>
         <div className="chat-header font-bold m-1">
           {name}
           <time className="text-xs opacity-50 p-1">12:45</time>

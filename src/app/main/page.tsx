@@ -46,7 +46,7 @@ const ParallaxPage = () => {
     <Parallax
       pages={16}
       ref={parallax}
-      className="bg-white text-[#2D3748] max-h-[99vh] my-auto border-b-4 border-base-200"
+      className="bg-white text-[#2D3748] max-h-[98vh] my-auto border-b-4 border-base-200"
     >
       <ParallaxLayer
         sticky={{ start: 0, end: 5 }}
@@ -60,8 +60,8 @@ const ParallaxPage = () => {
               className="max-w-sm rounded-lg shadow-2xl z-40 -rotate-z-[35deg] -translate-x-[8rem] "
             />
             <div className="p-2 absolute left-[20%] top-1/2 w-full z-50">
-              <h1 className="text-5xl leading-normal  font-bold">Layout Editor </h1>
-              <h1 className="text-5xl leading-normal font-bold relative">
+              <h1 className="text-[2.5vw] leading-normal font-bold">Layout Editor </h1>
+              <h1 className="text-[2.5vw] leading-normal font-bold relative">
                 {`for `}
                 <span className="bg-gradient-to-r from-blue-600 to-indigo-400 bg-clip-text text-transparent blur-xl absolute">
                   DaisyUI
@@ -70,7 +70,7 @@ const ParallaxPage = () => {
                   DaisyUI
                 </span>
               </h1>
-              <h1 className="text-5xl leading-normal font-bold">Make prototyping easier</h1>
+              <h1 className="text-[2.5vw] leading-normal font-bold">Make prototyping easier</h1>
             </div>
           </div>
         </div>
@@ -97,10 +97,10 @@ const ParallaxPage = () => {
           <div className="hero-content flex flex-col lg:flex-row-reverse w-full">
             <div className="self-start w-full">
               <div className="w-full">
-                <h1 className="text-5xl text-[#394e6b] font-bold leading-normal">
+                <h1 className="text-[2.5vw] text-[#394e6b] font-bold leading-normal">
                   Easily with Grid-based
                 </h1>
-                <h1 className="text-5xl text-[#80d0d0] font-mono leading-normal">
+                <h1 className="text-[2.5vw] text-[#80d0d0] font-mono leading-normal">
                   without writing code
                 </h1>
               </div>
@@ -112,7 +112,7 @@ const ParallaxPage = () => {
       <ParallaxLayer
         sticky={{ start: 1, end: 9 }}
         className="flex items-center justify-end"
-        style={{ maxHeight: "99vh" }}
+        style={{ maxHeight: "97.5vh" }}
       >
         <div
           className={`mockup-browser border bg-base-300 w-[52vw] shadow-2xl h-[75vh] translate-x-[5vw] transition-all duration-700 ${
@@ -129,7 +129,7 @@ const ParallaxPage = () => {
       <ParallaxLayer
         sticky={{ start: 2, end: 5.2 }}
         className="flex items-center justify-end "
-        style={{ maxHeight: "99vh" }}
+        style={{ maxHeight: "97.5vh" }}
       >
         <MockupNavbar />
       </ParallaxLayer>
@@ -137,7 +137,7 @@ const ParallaxPage = () => {
       <ParallaxLayer
         sticky={{ start: 2.5, end: 5.4 }}
         className="flex items-center justify-end "
-        style={{ maxHeight: "99vh" }}
+        style={{ maxHeight: "97.5vh" }}
       >
         <MockupFriendsList />
       </ParallaxLayer>
@@ -145,7 +145,7 @@ const ParallaxPage = () => {
       <ParallaxLayer
         sticky={{ start: 3, end: 5.6 }}
         className="flex items-center justify-end"
-        style={{ maxHeight: "99vh" }}
+        style={{ maxHeight: "97.5vh" }}
       >
         <MockupChatBoard />
       </ParallaxLayer>
@@ -153,7 +153,7 @@ const ParallaxPage = () => {
       <ParallaxLayer
         sticky={{ start: 4, end: 4.5 }}
         className="flex items-center justify-end z-50 absolute "
-        style={{ maxHeight: "99vh" }}
+        style={{ maxHeight: "97.5vh" }}
       >
         <MockupChat
           image="/images/woman1.jpg"
@@ -166,7 +166,7 @@ const ParallaxPage = () => {
       <ParallaxLayer
         sticky={{ start: 4.1, end: 4.6 }}
         className="flex items-center justify-end z-50 absolute "
-        style={{ maxHeight: "99vh" }}
+        style={{ maxHeight: "97.5vh" }}
       >
         <div className="-translate-x-[16.5vw]  -rotate-x-[20deg] -rotate-z-12 z-50 -translate-y-[6vh]">
           <div className="chat chat-end ">
@@ -180,7 +180,7 @@ const ParallaxPage = () => {
       <ParallaxLayer
         sticky={{ start: 4.2, end: 4.7 }}
         className="flex items-center justify-end z-50 absolute "
-        style={{ maxHeight: "99vh" }}
+        style={{ maxHeight: "97.5vh" }}
       >
         <MockupChat
           image="/images/woman1.jpg"
@@ -318,19 +318,22 @@ const`}</span>
         <div className="hero min-h-screen relative">
           <div className="hero-content text-center">
             <div className="max-w-2xl mx-auto">
-              <h1 className="text-5xl leading-normal font-bold w-full  ">{`Finally, Let's really`}</h1>
-              <h1 className="text-5xl font-bold w-full">{`get started now`}</h1>
+              <h1 className="text-[2.5vw] leading-normal font-bold w-full  ">{`Finally, Let's really`}</h1>
+              <h1 className="text-[2.5vw] font-bold w-full">{`get started now`}</h1>
 
               <p className="py-6 max-w-md m-auto">
                 daisyUI adds component class names to Tailwind CSS so you can make beautiful
                 websites faster than ever.
               </p>
               <div className="flex space-x-4 items-center justify-center">
-                <button className="group btn btn-neutral" onClick={() => router.push("/use")}>
+                <button
+                  className="text-[1vw] group btn btn-neutral"
+                  onClick={() => router.push("/use")}
+                >
                   Get Started
                   <FaArrowRightLong className="duration-100 group-hover:translate-x-1" />
                 </button>
-                <a className="btn group" href="https://github.com/Heonys/daizer">
+                <a className="text-[1vw] btn group" href="https://github.com/Heonys/daizer">
                   <FaGithub
                     color="black"
                     size={20}

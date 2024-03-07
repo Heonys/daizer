@@ -4,7 +4,7 @@ import Image from "next/image";
 const MockupFriendsList = () => {
   return (
     <div className="flex flex-col w-[20vw] translate-x-[4vw] bg-white rounded-3xl  -rotate-x-[20deg] -rotate-z-12 shadow-2xl">
-      <div className="artboard artboard-horizontal phone-1 ">
+      <div className="artboard artboard-horizontal phone-1 h-[45vh]">
         <div role="tablist" className="tabs tabs-bordered w-[18vw] p-2">
           <a role="tab" className="tab tab-active">
             Friends
