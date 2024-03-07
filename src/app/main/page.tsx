@@ -43,12 +43,19 @@ const ParallaxPage = () => {
   useEffect(scrollListener, []);
 
   return (
-    <Parallax pages={16} ref={parallax} className="bg-white text-[#2D3748] max-h-[920px] my-auto">
-      <ParallaxLayer sticky={{ start: 0, end: 5 }} className="flex items-center justify-start">
+    <Parallax
+      pages={16}
+      ref={parallax}
+      className="bg-white text-[#2D3748] max-h-[99vh] my-auto border-b-4 border-base-200"
+    >
+      <ParallaxLayer
+        sticky={{ start: 0, end: 5 }}
+        className="flex items-center justify-start max-h-[96vh]"
+      >
         <div className="hero min-h-screen flex justify-start items-center ml-10">
           <div className="hero-content flex lg:flex-row relative w-full justify-start">
             <Image
-              src="/images/daisy.jpg"
+              src="/images/Daisy.jpg"
               alt="daisy"
               className="max-w-sm rounded-lg shadow-2xl z-40 -rotate-z-[35deg] -translate-x-[8rem] "
             />
@@ -71,18 +78,21 @@ const ParallaxPage = () => {
 
       <ParallaxLayer
         sticky={{ start: 0, end: 10.5 }}
-        className={`flex items-end justify-center p-5 -z-40 transition-all duration-500 ${
+        className={`flex items-end justify-center p-5 max-h-[96vh] -z-40 transition-all duration-500 ${
           ScrollDownSticky ? "" : "hidden"
         }`}
         ref={scrollDownRef}
       >
-        <div className="animate-bounce w-36 flex flex-col items-center space-y-1">
+        <div className="animate-bounce w-96 flex flex-col items-center space-y-1">
           <p className="font-extrabold">Scroll Down</p>
           <IoMdArrowRoundDown size={30} />
         </div>
       </ParallaxLayer>
 
-      <ParallaxLayer sticky={{ start: 7, end: 9 }} className="flex items-center justify-end z-0">
+      <ParallaxLayer
+        sticky={{ start: 7, end: 9 }}
+        className="flex items-center justify-end z-0 max-h-[96vh]"
+      >
         <div className="hero min-h-screen z-0">
           <div className="hero-content flex flex-col lg:flex-row-reverse w-full">
             <div className="self-start w-full">
@@ -99,34 +109,51 @@ const ParallaxPage = () => {
         </div>
       </ParallaxLayer>
 
-      <ParallaxLayer sticky={{ start: 1, end: 9 }} className="flex items-center justify-end ">
+      <ParallaxLayer
+        sticky={{ start: 1, end: 9 }}
+        className="flex items-center justify-end"
+        style={{ maxHeight: "99vh" }}
+      >
         <div
           className={`mockup-browser border bg-base-300 w-[52vw] shadow-2xl h-[75vh] translate-x-[5vw] transition-all duration-700 ${
             rotate ? "-rotate-x-[20deg] -rotate-z-12" : ""
           }`}
         >
           <div className="mockup-browser-toolbar">
-            <div className="input">https://my.favorite.com/chat</div>
+            <div className="input">https://daizer.vercel.app/main</div>
           </div>
           <div className="flex justify-center h-full px-4 py-16 bg-base-200"></div>
         </div>
       </ParallaxLayer>
 
-      <ParallaxLayer sticky={{ start: 2, end: 5.2 }} className="flex items-center justify-end">
+      <ParallaxLayer
+        sticky={{ start: 2, end: 5.2 }}
+        className="flex items-center justify-end "
+        style={{ maxHeight: "99vh" }}
+      >
         <MockupNavbar />
       </ParallaxLayer>
 
-      <ParallaxLayer sticky={{ start: 2.5, end: 5.4 }} className="flex items-center justify-end">
+      <ParallaxLayer
+        sticky={{ start: 2.5, end: 5.4 }}
+        className="flex items-center justify-end "
+        style={{ maxHeight: "99vh" }}
+      >
         <MockupFriendsList />
       </ParallaxLayer>
 
-      <ParallaxLayer sticky={{ start: 3, end: 5.6 }} className="flex items-center justify-end">
+      <ParallaxLayer
+        sticky={{ start: 3, end: 5.6 }}
+        className="flex items-center justify-end"
+        style={{ maxHeight: "99vh" }}
+      >
         <MockupChatBoard />
       </ParallaxLayer>
 
       <ParallaxLayer
         sticky={{ start: 4, end: 4.5 }}
-        className="flex items-center justify-end z-50 absolute"
+        className="flex items-center justify-end z-50 absolute "
+        style={{ maxHeight: "99vh" }}
       >
         <MockupChat
           image="/images/woman1.jpg"
@@ -138,7 +165,8 @@ const ParallaxPage = () => {
 
       <ParallaxLayer
         sticky={{ start: 4.1, end: 4.6 }}
-        className="flex items-center justify-end z-50 absolute"
+        className="flex items-center justify-end z-50 absolute "
+        style={{ maxHeight: "99vh" }}
       >
         <div className="-translate-x-[16.5vw]  -rotate-x-[20deg] -rotate-z-12 z-50 -translate-y-[6vh]">
           <div className="chat chat-end ">
@@ -151,7 +179,8 @@ const ParallaxPage = () => {
 
       <ParallaxLayer
         sticky={{ start: 4.2, end: 4.7 }}
-        className="flex items-center justify-end z-50 absolute"
+        className="flex items-center justify-end z-50 absolute "
+        style={{ maxHeight: "99vh" }}
       >
         <MockupChat
           image="/images/woman1.jpg"
@@ -161,7 +190,10 @@ const ParallaxPage = () => {
         />
       </ParallaxLayer>
 
-      <ParallaxLayer sticky={{ start: 8, end: 9 }} className="flex items-center justify-end z-50">
+      <ParallaxLayer
+        sticky={{ start: 8, end: 9 }}
+        className="flex items-center justify-end z-50 max-h-[96vh]"
+      >
         <div className="mockup-code p-3 w-[44vw] h-[60vh] -translate-x-[1vw] overflow-hidden">
           <pre>
             <code>
@@ -237,15 +269,18 @@ const`}</span>
         </div>
       </ParallaxLayer>
 
-      <ParallaxLayer ref={parallaxLayer1} sticky={{ start: 6.2, end: 11 }}>
+      <ParallaxLayer ref={parallaxLayer1} sticky={{ start: 6.2, end: 11 }} className="max-h-[96vh]">
         <div></div>
       </ParallaxLayer>
 
-      <ParallaxLayer ref={parallaxLayer2} sticky={{ start: 11, end: 15 }}>
+      <ParallaxLayer ref={parallaxLayer2} sticky={{ start: 11, end: 15 }} className="max-h-[96vh]">
         <div></div>
       </ParallaxLayer>
 
-      <ParallaxLayer sticky={{ start: 10, end: 16 }} className="flex items-center justify-center">
+      <ParallaxLayer
+        sticky={{ start: 10, end: 16 }}
+        className="flex items-center justify-center max-h-[96vh]"
+      >
         <div
           className={`hero min-h-screen transition-all duration-1000  ${
             scaled ? "scale-150" : "scale-100"
@@ -278,7 +313,7 @@ const`}</span>
 
       <ParallaxLayer
         sticky={{ start: 14.5, end: 16 }}
-        className="flex bg-white items-end justify-center"
+        className="flex bg-white items-end justify-center max-h-[96vh]"
       >
         <div className="hero min-h-screen relative">
           <div className="hero-content text-center">
